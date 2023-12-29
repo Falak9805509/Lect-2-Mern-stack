@@ -141,17 +141,26 @@ title += `. obese you need to loose weight of ${weight - idealweight.toFixed(2)}
 title += `. overweight you need to loose weight of ${weight-idealweight} kg`
 }
 
-else if (bmibody>18){
+else if (bmibody>18.5){
 
-    title += '. healthy you dont need to loose weight or gain'
+    if(parseInt(bmibody)>22){
+        title+=` healthy but as a suggestion yiu need to loose ${weight-idealweight.toFixed(2)} kg`
+    }
+    else if (bmibody<22){
+        title+=` healthy as a suggestion u need to gain ${idealweight.toFixed(2)-weight}kg`
+    }
+    else{
+        title+=" perfect"
+    }
     }
 else if (bmibody<18.5){
     title+=`. underweight you need to gain ${idealweight.toFixed(2)-weight} kg`
 }
-//console.log("BMI",bmibody)
-//console.log("title",title)
-document.write("BMI" , bmibody);
-document.write("title",title);
+console.log("BMI",bmibody.toFixed(2))
+console.log("title",title)
+console.log("Ideal weight" ,idealweight.toFixed(2))
+//document.write("BMI" , bmibody);
+//document.write("title",title);
 
 }
 
